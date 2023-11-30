@@ -9,6 +9,7 @@ public static class ObjectJsonExtension
     public static JsonSerializerSettings SetDefaultSettings(this JsonSerializerSettings settings)
     {
         settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+        settings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
         return settings;
     }
 

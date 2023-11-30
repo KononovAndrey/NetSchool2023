@@ -1,5 +1,6 @@
 ﻿namespace NetSchool.Api;
 
+using NetSchool.Context.Seeder;
 using NetSchool.Services.Logger;
 using NetSchool.Services.Settings;
 
@@ -11,7 +12,9 @@ public static class Bootstrapper
             .AddMainSettings()
             .AddLogSettings()
             .AddSwaggerSettings()
-            .AddAppLogger();
+            .AddAppLogger()
+            .AddDbSeeder()
+            ;
 
         return service;
     }
