@@ -1,0 +1,75 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{B1CEC8BF-02BF-4B8A-A984-FBEBF4BB4394}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{404F04A8-0D26-42D8-BA98-260BFDAB1D7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{6BBFA55B-A8F7-4C71-A1B3-72DC0782F130}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Systems", "Systems", "{041C48F9-5561-4371-B11F-CE0C4095F92C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9FACB3B0-4D1D-456A-87E4-3BA202EA9B1E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{DF0EEABE-B3BF-476E-BB91-422A158ABB7D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Worker", "Worker", "{290C4193-D47E-4EC6-9890-8F1793CA21D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{45F2C2A4-A692-4DEC-B7D3-4836675C3D99}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetSchool.Api", "Systems\Api\NetSchool.Api\NetSchool.Api.csproj", "{BF67E6F3-A745-4EE8-98A5-E162304DFB48}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetSchool.Worker", "Systems\Worker\NetSchool.Worker\NetSchool.Worker.csproj", "{597E6FA1-7C8D-4E2D-B87C-BAFB3DFCC864}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetSchool.Common", "Shared\NetSchool.Common\NetSchool.Common.csproj", "{51D00AE0-5DE9-44D6-8FC2-A7E7DF29DD2C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetSchool.Services.Settings", "Services\NetSchool.Services.Settings\NetSchool.Services.Settings.csproj", "{6FE9D463-4814-4281-9687-DF581F206E83}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetSchool.Services.Logger", "Services\NetSchool.Services.Logger\NetSchool.Services.Logger.csproj", "{753F4E8A-C77F-4563-81C4-49B9F806B907}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF67E6F3-A745-4EE8-98A5-E162304DFB48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF67E6F3-A745-4EE8-98A5-E162304DFB48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF67E6F3-A745-4EE8-98A5-E162304DFB48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF67E6F3-A745-4EE8-98A5-E162304DFB48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{597E6FA1-7C8D-4E2D-B87C-BAFB3DFCC864}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{597E6FA1-7C8D-4E2D-B87C-BAFB3DFCC864}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{597E6FA1-7C8D-4E2D-B87C-BAFB3DFCC864}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{597E6FA1-7C8D-4E2D-B87C-BAFB3DFCC864}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51D00AE0-5DE9-44D6-8FC2-A7E7DF29DD2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51D00AE0-5DE9-44D6-8FC2-A7E7DF29DD2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51D00AE0-5DE9-44D6-8FC2-A7E7DF29DD2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51D00AE0-5DE9-44D6-8FC2-A7E7DF29DD2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FE9D463-4814-4281-9687-DF581F206E83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FE9D463-4814-4281-9687-DF581F206E83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FE9D463-4814-4281-9687-DF581F206E83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FE9D463-4814-4281-9687-DF581F206E83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{753F4E8A-C77F-4563-81C4-49B9F806B907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{753F4E8A-C77F-4563-81C4-49B9F806B907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{753F4E8A-C77F-4563-81C4-49B9F806B907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{753F4E8A-C77F-4563-81C4-49B9F806B907}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DF0EEABE-B3BF-476E-BB91-422A158ABB7D} = {041C48F9-5561-4371-B11F-CE0C4095F92C}
+		{290C4193-D47E-4EC6-9890-8F1793CA21D8} = {041C48F9-5561-4371-B11F-CE0C4095F92C}
+		{45F2C2A4-A692-4DEC-B7D3-4836675C3D99} = {041C48F9-5561-4371-B11F-CE0C4095F92C}
+		{BF67E6F3-A745-4EE8-98A5-E162304DFB48} = {DF0EEABE-B3BF-476E-BB91-422A158ABB7D}
+		{597E6FA1-7C8D-4E2D-B87C-BAFB3DFCC864} = {290C4193-D47E-4EC6-9890-8F1793CA21D8}
+		{51D00AE0-5DE9-44D6-8FC2-A7E7DF29DD2C} = {6BBFA55B-A8F7-4C71-A1B3-72DC0782F130}
+		{6FE9D463-4814-4281-9687-DF581F206E83} = {404F04A8-0D26-42D8-BA98-260BFDAB1D7F}
+		{753F4E8A-C77F-4563-81C4-49B9F806B907} = {404F04A8-0D26-42D8-BA98-260BFDAB1D7F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {02260A20-C2C8-467A-8E4F-2958FC962660}
+	EndGlobalSection
+EndGlobal
