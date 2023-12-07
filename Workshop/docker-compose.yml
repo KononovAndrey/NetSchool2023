@@ -1,0 +1,38 @@
+version: '3.4'
+
+services:
+
+  netschool_postgresql:
+    image: postgres:14.1
+    
+  netschool_rabbitmq:
+    image: rabbitmq:management
+            
+  netschool_api:
+    image: ${DOCKER_REGISTRY-}netschoolapi
+    build:
+      context: .
+      dockerfile: Systems/Api/NetSchool.Api/Dockerfile
+    depends_on:
+      - netschool_postgresql
+      - netschool_rabbitmq
+
+  dsrnetschool_worker_1:
+    image: ${DOCKER_REGISTRY-}netschoolworker
+    build:
+      context: .
+      dockerfile: Systems/Worker/NetSchool.Worker/Dockerfile
+    depends_on:
+      - netschool_postgresql
+      - netschool_rabbitmq
+      - netschool_api
+
+  dsrnetschool_worker_2:
+    image: ${DOCKER_REGISTRY-}netschoolworker
+    build:
+      context: .
+      dockerfile: Systems/Worker/NetSchool.Worker/Dockerfile
+    depends_on:
+      - netschool_postgresql
+      - netschool_rabbitmq
+      - netschool_api 

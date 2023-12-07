@@ -1,9 +1,26 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..</DockerfileContext>
   </PropertyGroup>
+
+  <ItemGroup>
+	<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
+	<PackageReference Include="Serilog.AspNetCore" Version="8.0.0" />
+	<PackageReference Include="Serilog.Enrichers.CorrelationId" Version="3.0.1" />
+	<PackageReference Include="Serilog.Expressions" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Data\NetSchool.Context\NetSchool.Context.csproj" />
+    <ProjectReference Include="..\..\..\Services\NetSchool.Services.Actions\NetSchool.Services.Actions.csproj" />
+    <ProjectReference Include="..\..\..\Services\NetSchool.Services.Logger\NetSchool.Services.Logger.csproj" />
+    <ProjectReference Include="..\..\..\Services\NetSchool.Services.RabbitMq\NetSchool.Services.RabbitMq.csproj" />
+    <ProjectReference Include="..\..\..\Shared\NetSchool.Common\NetSchool.Common.csproj" />
+  </ItemGroup>
 
 </Project>

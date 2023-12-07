@@ -4,6 +4,8 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..</DockerfileContext>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +14,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
     <PackageReference Include="Serilog" Version="3.1.1" />
     <PackageReference Include="Serilog.Enrichers.CorrelationId" Version="3.0.1" />
 	  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
@@ -30,9 +33,13 @@
     <ProjectReference Include="..\..\..\Data\NetSchool.Context.Migrations\NetSchool.Context.Migrations.PgSql\NetSchool.Context.Migrations.PgSql.csproj" />
     <ProjectReference Include="..\..\..\Data\NetSchool.Context.Seeder\NetSchool.Context.Seeder.csproj" />
     <ProjectReference Include="..\..\..\Data\NetSchool.Context\NetSchool.Context.csproj" />
+    <ProjectReference Include="..\..\..\Services\NetSchool.Services.Actions\NetSchool.Services.Actions.csproj" />
+    <ProjectReference Include="..\..\..\Services\NetSchool.Services.Books\NetSchool.Services.Books.csproj" />
     <ProjectReference Include="..\..\..\Services\NetSchool.Services.Logger\NetSchool.Services.Logger.csproj" />
+    <ProjectReference Include="..\..\..\Services\NetSchool.Services.RabbitMq\NetSchool.Services.RabbitMq.csproj" />
     <ProjectReference Include="..\..\..\Services\NetSchool.Services.Settings\NetSchool.Services.Settings.csproj" />
     <ProjectReference Include="..\..\..\Shared\NetSchool.Common\NetSchool.Common.csproj" />
+    <ProjectReference Include="..\NetSchool.Api.Settings\NetSchool.Api.Settings.csproj" />
   </ItemGroup>
 
 </Project>

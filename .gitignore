@@ -43,4 +43,4 @@ msbuild.wrn
 .docker/
 *node_modules
 
-
+rabbitmq/
