@@ -7,6 +7,7 @@ using NetSchool.Api.Settings;
 using NetSchool.Services.Books;
 using NetSchool.Services.RabbitMq;
 using NetSchool.Services.Actions;
+using NetSchool.Services.UserAccount;
 
 public static class Bootstrapper
 {
@@ -16,12 +17,14 @@ public static class Bootstrapper
             .AddMainSettings()
             .AddLogSettings()
             .AddSwaggerSettings()
+            .AddIdentitySettings()
             .AddAppLogger()
             .AddDbSeeder()
             .AddApiSpecialSettings()
             .AddBookService()
             .AddRabbitMq()
             .AddActions()
+            .AddUserAccountService()
             ;
 
         return service;

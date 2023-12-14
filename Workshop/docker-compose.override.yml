@@ -32,11 +32,19 @@ services:
     env_file:
       - env.api
 
+  dsrnetschool_identity:
+    ports:
+      - "10001:8080"
+    networks:
+      - shared_netschool_net
+    env_file:
+      - env.identity
+
   dsrnetschool_worker_1:
     networks:
       - shared_netschool_net
     ports:
-      - "10001:8080"
+      - "10002:8080"
     env_file:
       - env.worker
 
@@ -44,7 +52,7 @@ services:
     networks:
       - shared_netschool_net
     ports:
-      - "10002:8080"
+      - "10003:8080"
     env_file:
       - env.worker
 

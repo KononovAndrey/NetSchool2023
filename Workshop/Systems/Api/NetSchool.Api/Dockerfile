@@ -17,6 +17,7 @@ COPY ["Data/NetSchool.Context.Entities/NetSchool.Context.Entities.csproj", "Data
 COPY ["Data/NetSchool.Context.Migrations/NetSchool.Context.Migrations.MySql/NetSchool.Context.Migrations.MySql.csproj", "Data/NetSchool.Context.Migrations/NetSchool.Context.Migrations.MySql/"]
 COPY ["Data/NetSchool.Context.Migrations/NetSchool.Context.Migrations.PgSql/NetSchool.Context.Migrations.PgSql.csproj", "Data/NetSchool.Context.Migrations/NetSchool.Context.Migrations.PgSql/"]
 COPY ["Data/NetSchool.Context.Seeder/NetSchool.Context.Seeder.csproj", "Data/NetSchool.Context.Seeder/"]
+COPY ["Services/NetSchool.Services.UserAccount/NetSchool.Services.UserAccount.csproj", "Services/NetSchool.Services.UserAccount/"]
 COPY ["Services/NetSchool.Services.Actions/NetSchool.Services.Actions.csproj", "Services/NetSchool.Services.Actions/"]
 COPY ["Services/NetSchool.Services.RabbitMq/NetSchool.Services.RabbitMq.csproj", "Services/NetSchool.Services.RabbitMq/"]
 COPY ["Services/NetSchool.Services.Books/NetSchool.Services.Books.csproj", "Services/NetSchool.Services.Books/"]

@@ -2,8 +2,10 @@
 
 using NetSchool.Context.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
-public class MainDbContext : DbContext
+public class MainDbContext : IdentityDbContext<User, IdentityRole<Guid>, Guid>
 {
     public DbSet<Author> Authors { get; set; }
     public DbSet<AuthorDetail> AuthorDetails { get; set; }
@@ -20,5 +22,6 @@ public class MainDbContext : DbContext
         modelBuilder.ConfigureAuthorDetails();
         modelBuilder.ConfigureBooks();
         modelBuilder.ConfigureCategories();
+        modelBuilder.ConfigureUsers();
     }
 }

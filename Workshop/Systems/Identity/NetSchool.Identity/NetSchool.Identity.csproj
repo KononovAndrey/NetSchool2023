@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="key\**" />
+    <Content Remove="key\**" />
+    <EmbeddedResource Remove="key\**" />
+    <None Remove="key\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<PackageReference Include="Duende.IdentityServer" Version="6.3.6" />
+	<PackageReference Include="Duende.IdentityServer.AspNetIdentity" Version="6.3.6" />
+	<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.0" />
+    <PackageReference Include="Serilog.Enrichers.CorrelationId" Version="3.0.1" />
+	<PackageReference Include="Serilog.Expressions" Version="4.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+	<PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.Development.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Data\NetSchool.Context\NetSchool.Context.csproj" />
+    <ProjectReference Include="..\..\..\Services\NetSchool.Services.Settings\NetSchool.Services.Settings.csproj" />
+    <ProjectReference Include="..\..\..\Shared\NetSchool.Common\NetSchool.Common.csproj" />
+  </ItemGroup>
+
+</Project>

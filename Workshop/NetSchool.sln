@@ -43,13 +43,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetSchool.Context.Seeder", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetSchool.Api.Settings", "Systems\Api\NetSchool.Api.Settings\NetSchool.Api.Settings.csproj", "{CADF60A8-3B97-4649-B951-746806222EDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetSchool.Services.Books", "Services\NetSchool.Services.Books\NetSchool.Services.Books.csproj", "{DB9EA682-AB47-4147-A8B7-093E32962765}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetSchool.Services.Books", "Services\NetSchool.Services.Books\NetSchool.Services.Books.csproj", "{DB9EA682-AB47-4147-A8B7-093E32962765}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_docker", "_docker", "{C3988BC8-DDD7-4270-ABF3-85F688889688}"
 	ProjectSection(SolutionItems) = preProject
 		docker-compose.override.yml = docker-compose.override.yml
 		docker-compose.yml = docker-compose.yml
 		env.api = env.api
+		env.identity = env.identity
 		env.worker = env.worker
 	EndProjectSection
 EndProject
@@ -58,6 +59,12 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetSchool.Services.Actions", "Services\NetSchool.Services.Actions\NetSchool.Services.Actions.csproj", "{2FFAB613-4F32-47EE-B789-166B573EECEB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetSchool.Worker", "Systems\Worker\NetSchool.Worker\NetSchool.Worker.csproj", "{9264FD57-F19F-45AA-A324-8D48E834F821}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{EC7D5BA8-FD8C-4B1D-B610-2FCE70C831E5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetSchool.Identity", "Systems\Identity\NetSchool.Identity\NetSchool.Identity.csproj", "{DF41994A-230F-49C2-8674-C8D2EE5E444C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetSchool.Services.UserAccount", "Services\NetSchool.Services.UserAccount\NetSchool.Services.UserAccount.csproj", "{7AAD5BFE-6017-4ED3-9414-ECAE22F46D4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -125,6 +132,14 @@ Global
 		{9264FD57-F19F-45AA-A324-8D48E834F821}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9264FD57-F19F-45AA-A324-8D48E834F821}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9264FD57-F19F-45AA-A324-8D48E834F821}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF41994A-230F-49C2-8674-C8D2EE5E444C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF41994A-230F-49C2-8674-C8D2EE5E444C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF41994A-230F-49C2-8674-C8D2EE5E444C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF41994A-230F-49C2-8674-C8D2EE5E444C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AAD5BFE-6017-4ED3-9414-ECAE22F46D4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AAD5BFE-6017-4ED3-9414-ECAE22F46D4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AAD5BFE-6017-4ED3-9414-ECAE22F46D4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AAD5BFE-6017-4ED3-9414-ECAE22F46D4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -149,6 +164,9 @@ Global
 		{A0088E10-3D55-43B4-8985-2410181F00C1} = {404F04A8-0D26-42D8-BA98-260BFDAB1D7F}
 		{2FFAB613-4F32-47EE-B789-166B573EECEB} = {404F04A8-0D26-42D8-BA98-260BFDAB1D7F}
 		{9264FD57-F19F-45AA-A324-8D48E834F821} = {290C4193-D47E-4EC6-9890-8F1793CA21D8}
+		{EC7D5BA8-FD8C-4B1D-B610-2FCE70C831E5} = {041C48F9-5561-4371-B11F-CE0C4095F92C}
+		{DF41994A-230F-49C2-8674-C8D2EE5E444C} = {EC7D5BA8-FD8C-4B1D-B610-2FCE70C831E5}
+		{7AAD5BFE-6017-4ED3-9414-ECAE22F46D4F} = {404F04A8-0D26-42D8-BA98-260BFDAB1D7F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {02260A20-C2C8-467A-8E4F-2958FC962660}

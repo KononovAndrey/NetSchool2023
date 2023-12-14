@@ -16,6 +16,15 @@ services:
     depends_on:
       - netschool_postgresql
       - netschool_rabbitmq
+ 
+  dsrnetschool_identity:
+    image: ${DOCKER_REGISTRY-}netschoolidentity
+    build:
+      context: .
+      dockerfile: Systems/Identity/NetSchool.Identity/Dockerfile
+    depends_on:
+      - netschool_postgresql
+      - netschool_api
 
   dsrnetschool_worker_1:
     image: ${DOCKER_REGISTRY-}netschoolworker

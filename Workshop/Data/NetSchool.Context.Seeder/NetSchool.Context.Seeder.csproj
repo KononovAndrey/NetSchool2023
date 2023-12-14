@@ -12,6 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\Services\NetSchool.Services.UserAccount\NetSchool.Services.UserAccount.csproj" />
       <ProjectReference Include="..\..\Shared\NetSchool.Common\NetSchool.Common.csproj" />
       <ProjectReference Include="..\NetSchool.Context.Entities\NetSchool.Context.Entities.csproj" />
       <ProjectReference Include="..\NetSchool.Context\NetSchool.Context.csproj" />

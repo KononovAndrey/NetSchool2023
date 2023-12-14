@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="7.1.0" />
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -38,6 +39,7 @@
     <ProjectReference Include="..\..\..\Services\NetSchool.Services.Logger\NetSchool.Services.Logger.csproj" />
     <ProjectReference Include="..\..\..\Services\NetSchool.Services.RabbitMq\NetSchool.Services.RabbitMq.csproj" />
     <ProjectReference Include="..\..\..\Services\NetSchool.Services.Settings\NetSchool.Services.Settings.csproj" />
+    <ProjectReference Include="..\..\..\Services\NetSchool.Services.UserAccount\NetSchool.Services.UserAccount.csproj" />
     <ProjectReference Include="..\..\..\Shared\NetSchool.Common\NetSchool.Common.csproj" />
     <ProjectReference Include="..\NetSchool.Api.Settings\NetSchool.Api.Settings.csproj" />
   </ItemGroup>
