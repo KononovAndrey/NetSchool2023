@@ -35,6 +35,7 @@
     <ProjectReference Include="..\..\..\Data\NetSchool.Context.Seeder\NetSchool.Context.Seeder.csproj" />
     <ProjectReference Include="..\..\..\Data\NetSchool.Context\NetSchool.Context.csproj" />
     <ProjectReference Include="..\..\..\Services\NetSchool.Services.Actions\NetSchool.Services.Actions.csproj" />
+    <ProjectReference Include="..\..\..\Services\NetSchool.Services.Authors\NetSchool.Services.Authors.csproj" />
     <ProjectReference Include="..\..\..\Services\NetSchool.Services.Books\NetSchool.Services.Books.csproj" />
     <ProjectReference Include="..\..\..\Services\NetSchool.Services.Logger\NetSchool.Services.Logger.csproj" />
     <ProjectReference Include="..\..\..\Services\NetSchool.Services.RabbitMq\NetSchool.Services.RabbitMq.csproj" />

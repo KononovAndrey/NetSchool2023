@@ -20,6 +20,7 @@ COPY ["Data/NetSchool.Context.Seeder/NetSchool.Context.Seeder.csproj", "Data/Net
 COPY ["Services/NetSchool.Services.UserAccount/NetSchool.Services.UserAccount.csproj", "Services/NetSchool.Services.UserAccount/"]
 COPY ["Services/NetSchool.Services.Actions/NetSchool.Services.Actions.csproj", "Services/NetSchool.Services.Actions/"]
 COPY ["Services/NetSchool.Services.RabbitMq/NetSchool.Services.RabbitMq.csproj", "Services/NetSchool.Services.RabbitMq/"]
+COPY ["Services/NetSchool.Services.Authors/NetSchool.Services.Authors.csproj", "Services/NetSchool.Services.Authors/"]
 COPY ["Services/NetSchool.Services.Books/NetSchool.Services.Books.csproj", "Services/NetSchool.Services.Books/"]
 COPY ["Services/NetSchool.Services.Logger/NetSchool.Services.Logger.csproj", "Services/NetSchool.Services.Logger/"]
 COPY ["Systems/Api/NetSchool.Api.Settings/NetSchool.Api.Settings.csproj", "Systems/Api/NetSchool.Api.Settings/"]

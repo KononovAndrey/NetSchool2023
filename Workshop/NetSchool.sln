@@ -66,6 +66,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetSchool.Identity", "Syste
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetSchool.Services.UserAccount", "Services\NetSchool.Services.UserAccount\NetSchool.Services.UserAccount.csproj", "{7AAD5BFE-6017-4ED3-9414-ECAE22F46D4F}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetSchool.Services.Authors", "Services\NetSchool.Services.Authors\NetSchool.Services.Authors.csproj", "{762E0E75-61F8-4056-9C73-C85A34BC1EC8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -140,6 +142,10 @@ Global
 		{7AAD5BFE-6017-4ED3-9414-ECAE22F46D4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AAD5BFE-6017-4ED3-9414-ECAE22F46D4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AAD5BFE-6017-4ED3-9414-ECAE22F46D4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{762E0E75-61F8-4056-9C73-C85A34BC1EC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{762E0E75-61F8-4056-9C73-C85A34BC1EC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{762E0E75-61F8-4056-9C73-C85A34BC1EC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{762E0E75-61F8-4056-9C73-C85A34BC1EC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -167,6 +173,7 @@ Global
 		{EC7D5BA8-FD8C-4B1D-B610-2FCE70C831E5} = {041C48F9-5561-4371-B11F-CE0C4095F92C}
 		{DF41994A-230F-49C2-8674-C8D2EE5E444C} = {EC7D5BA8-FD8C-4B1D-B610-2FCE70C831E5}
 		{7AAD5BFE-6017-4ED3-9414-ECAE22F46D4F} = {404F04A8-0D26-42D8-BA98-260BFDAB1D7F}
+		{762E0E75-61F8-4056-9C73-C85A34BC1EC8} = {404F04A8-0D26-42D8-BA98-260BFDAB1D7F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {02260A20-C2C8-467A-8E4F-2958FC962660}

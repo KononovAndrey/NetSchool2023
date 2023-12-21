@@ -5,6 +5,7 @@ using NetSchool.Services.Logger;
 using NetSchool.Services.Settings;
 using NetSchool.Api.Settings;
 using NetSchool.Services.Books;
+using NetSchool.Services.Authors;
 using NetSchool.Services.RabbitMq;
 using NetSchool.Services.Actions;
 using NetSchool.Services.UserAccount;
@@ -22,6 +23,7 @@ public static class Bootstrapper
             .AddDbSeeder()
             .AddApiSpecialSettings()
             .AddBookService()
+            .AddAuthorService()
             .AddRabbitMq()
             .AddActions()
             .AddUserAccountService()
