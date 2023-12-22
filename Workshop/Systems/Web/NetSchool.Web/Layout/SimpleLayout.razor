@@ -1,0 +1,32 @@
+﻿@using NetSchool.Web.Services
+@inherits LayoutComponentBase
+
+@inject IConfigurationService Configuration
+
+<MudThemeProvider @bind-IsDarkMode="@(darkMode)" />
+
+<MudLayout>
+    <MudAppBar Elevation="0">
+        <MudText Typo="Typo.h5" >DSRNetSchool</MudText>
+        <MudSpacer />
+        <MudIconButton Icon="@(darkMode ? Icons.Material.Filled.LightMode : Icons.Material.Filled.DarkMode)" @onclick="@DarkModeSwitch" Color="Color.Inherit" Edge="Edge.End" />
+    </MudAppBar>
+    <MudMainContent>
+        @Body
+    </MudMainContent>
+</MudLayout>
+
+@code {
+    private bool darkMode = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        darkMode = await Configuration.GetDarkModeAsync();
+    }
+
+    async void DarkModeSwitch()
+    {
+        darkMode = !darkMode;
+        await Configuration.SetDarkModeAsync(darkMode);
+    }
+}

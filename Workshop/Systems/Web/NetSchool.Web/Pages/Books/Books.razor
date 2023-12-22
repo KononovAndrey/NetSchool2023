@@ -1,0 +1,145 @@
+﻿@page "/books"
+@using NetSchool.Web.Pages.Books.Services
+@using NetSchool.Web.Pages.Books.Models
+@using NetSchool.Web.Components
+@using Microsoft.AspNetCore.Authorization
+@inject IBookService BookService
+@inject ISnackbar Snackbar
+@inject IDialogService DialogService
+
+@attribute [Authorize]
+@layout MainLayout
+
+<PageTitle>Books</PageTitle>
+
+<MudText Typo="Typo.h4" Class="ma-8">Books</MudText>
+
+<MudTable Items="@books" Class="ma-8">
+    <ColGroup>
+        <col style="width:50px;" />
+        <col />
+        <col />
+        <col />
+        <col style="width:100px;" />
+    </ColGroup>
+    <ToolBarContent>
+        <MudButton StartIcon="@Icons.Material.Filled.Add" Variant="Variant.Filled" Color="Color.Primary" OnClick="AddBook">Add</MudButton>
+        <MudSpacer />
+        <MudTextField @bind-Value="searchString" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium"></MudTextField>
+    </ToolBarContent>
+    <HeaderContent>
+        <MudTh>Id</MudTh>
+        <MudTh>Title</MudTh>
+        <MudTh>Author</MudTh>
+        <MudTh>Categories</MudTh>
+        <MudTh>Description</MudTh>
+        <MudTh></MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="Id">@context.Id</MudTd>
+        <MudTd DataLabel="Title">@context.Title</MudTd>
+        <MudTd DataLabel="Author">@context.AuthorName</MudTd>
+        <MudTd DataLabel="Categories">@string.Join(", ", context.Categories)</MudTd>
+        <MudTd DataLabel="Description">@context.Description</MudTd>
+        <MudTd>
+            <MudIconButton Icon="@Icons.Material.Filled.Edit" Variant="Variant.Outlined" Color="Color.Primary" Size="Size.Small" OnClick="() => EditBook(context.Id)"/>
+            <MudIconButton Icon="@Icons.Material.Filled.Delete" Variant="Variant.Outlined" Color="Color.Primary" Size="Size.Small" OnClick="() => DeleteBook(context.Id)"/>
+        </MudTd>
+    </RowTemplate>
+    <PagerContent>
+        <MudTablePager />
+    </PagerContent>
+</MudTable>
+
+@code {
+    private IEnumerable<BookModel> books = new List<BookModel>();
+    private string searchString = string.Empty;
+
+    private async Task ReloadData()
+    {
+        books = await BookService.GetBooks();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            await ReloadData();
+        }
+        catch (Exception ex)
+        {
+            Snackbar.Add(ex.Message, Severity.Error);
+        }
+    }
+
+    private async Task AddBook()
+    {
+        var parameters = new DialogParameters { };
+        var options = new DialogOptions { CloseButton = true, MaxWidth = MaxWidth.Large, FullWidth = true };
+
+        var dialog = await DialogService.ShowAsync<BookDialog>("Add book", parameters, options);
+        var result = await dialog.Result;
+
+        if (result.Canceled)
+            return;
+        
+        try
+        {
+            var bookModel = ((BookDialog)dialog.Dialog).Model;
+            var createModel = new CreateModel()
+            {
+                AuthorId = bookModel.AuthorId,
+                Description = bookModel.Description,
+                Title = bookModel.Title
+            };
+            await BookService.AddBook(createModel);
+            await ReloadData();
+        }
+        catch (Exception ex)
+        {
+            Snackbar.Add(ex.Message, Severity.Error);
+        }
+    }
+    
+    private async Task EditBook(Guid bookId)
+    {
+        var parameters = new DialogParameters();
+        parameters.Add("BookId", bookId);
+
+        var options = new DialogOptions { CloseButton = true, MaxWidth = MaxWidth.Large, FullWidth = true };
+        var dialog = DialogService.Show<BookDialog>("Edit book", parameters, options);
+        var result = await dialog.Result;
+
+        if (result.Canceled)
+            return;
+
+        var model = ((BookDialog)dialog.Dialog).Model;
+        var updateModel = new UpdateModel()
+        {
+            Description = model.Description,
+            Title = model.Title
+        };
+        
+        await BookService.EditBook(bookId, updateModel);
+        await ReloadData();
+    }
+
+    private async Task DeleteBook(Guid bookId)
+    {
+        var parameters = new DialogParameters();
+        parameters.Add("ContentText", "Do you really want to delete this book? This process cannot be undone.");
+        parameters.Add("ButtonText", "Delete");
+        parameters.Add("Color", Color.Error);
+
+        var options = new DialogOptions() { CloseButton = true, MaxWidth = MaxWidth.ExtraSmall };
+
+        var dialog = await DialogService.ShowAsync<ConfirmationDialog>("Delete book", parameters, options);
+        var result = await dialog.Result;
+
+        if (result.Canceled)
+            return;
+        
+        await BookService.DeleteBook(bookId);
+        await ReloadData();
+    }
+}

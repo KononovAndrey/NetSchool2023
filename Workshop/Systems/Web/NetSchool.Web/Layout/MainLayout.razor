@@ -1,0 +1,50 @@
+﻿@using MudBlazor
+@using NetSchool.Web.Services
+@inherits LayoutComponentBase
+@inject IConfigurationService ConfigurationService
+
+<MudThemeProvider @bind-IsDarkMode="isDarkMode"/>
+<MudDialogProvider/>
+<MudSnackbarProvider/>
+            
+<MudLayout>
+    <MudAppBar Elevation="1">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@DrawerToggleAsync" />
+        <MudSpacer />
+        <MudIconButton Icon="@(isDarkMode ? Icons.Material.Filled.LightMode : Icons.Material.Filled.DarkMode)" @onclick="@ToggleDarkModeAsync" Color="Color.Inherit" Edge="Edge.End" />
+        <UserMenu/>
+    </MudAppBar>
+    <MudDrawer @bind-Open="drawerOpen" Elevation="2">
+        <MudDrawerHeader>
+            <MudText Typo="Typo.h5" Class="mt-1">.NET School</MudText>
+        </MudDrawerHeader>
+        <NavMenu/>
+    </MudDrawer>
+    <MudMainContent>
+        <MudContainer MaxWidth="MaxWidth.Large">
+            @Body
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
+@code {
+    private bool drawerOpen = true;
+    private bool isDarkMode = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        drawerOpen = await ConfigurationService.GetNavigationMenuVisibleAsync();
+        isDarkMode = await ConfigurationService.GetDarkModeAsync();
+    }
+
+    private async Task DrawerToggleAsync()
+    {
+        drawerOpen = !drawerOpen;
+        await ConfigurationService.SetNavigationMenuVisibleAsync(drawerOpen);
+    }
+
+    private async Task ToggleDarkModeAsync()
+    {
+        isDarkMode = !isDarkMode;
+        await ConfigurationService.SetDarkModeAsync(isDarkMode);
+    }
+}
