@@ -16,7 +16,8 @@ public class BookService : IBookService
     private readonly IModelValidator<CreateModel> createModelValidator;
     private readonly IModelValidator<UpdateModel> updateModelValidator;
 
-    public BookService(IDbContextFactory<MainDbContext> dbContextFactory, 
+    public BookService(
+        IDbContextFactory<MainDbContext> dbContextFactory, 
         IMapper mapper,
         IAction action,
         IModelValidator<CreateModel> createModelValidator,
